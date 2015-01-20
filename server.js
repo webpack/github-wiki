@@ -31,7 +31,7 @@ http.createServer(function (req, res) {
 		return;
 	}
 	console.log("Downloading request to " + path);
-	https.get("https://raw.githubusercontent.com/wiki" + path.replace(/-/g, " ") + ".md", function(rawRes) {
+	https.get("https://raw.githubusercontent.com/wiki" + path + ".md", function(rawRes) {
 		if(rawRes.statusCode === 200) {
 			var result = [];
 			rawRes.on("data", function(d) { result.push(d); });
